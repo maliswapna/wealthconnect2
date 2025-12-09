@@ -1,0 +1,18 @@
+const { chromium } = require('playwright');
+
+(async () => {
+  const browser = await chromium.launch({ headless: false });
+  const page = await browser.newPage();
+
+  await page.goto('https://practice.expandtesting.com/login');
+  await page.fill('#username', 'practice');              // adjust selector if needed
+  await page.fill('#password', 'SuperSecretPassword!');  // credentials from site
+  await page.click('button[type="submit"]');             // adjust to actual button
+
+  // wait and verify successful login (adjust selector or logic as needed)
+  await page.waitForTimeout(3000);
+  const success = await page.textContent('body');
+  console.log(success);
+
+  await browser.close();
+})();
