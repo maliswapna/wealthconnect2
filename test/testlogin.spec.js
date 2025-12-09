@@ -13,6 +13,8 @@ const { chromium } = require('playwright');
   // wait and verify successful login (adjust selector or logic as needed)
   await page.waitForTimeout(3000);
   const success = await page.textContent('body');
+
+  // Print the page content after login to verify
   console.log(success);
 
   await browser.close();
