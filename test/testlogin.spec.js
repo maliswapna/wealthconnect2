@@ -1,4 +1,5 @@
 const { chromium } = require('playwright');
+// Sample login test using Playwright
 
 (async () => {
   const browser = await chromium.launch({ headless: false });
