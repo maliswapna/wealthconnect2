@@ -11,6 +11,8 @@ test('Login Test - Sample', async ({ page }) => {
   // Enter password
   await page.fill('#password', 'secret_sauce');
 
+  await page.waitForTimeout(1000); // wait for 1 second
+
   // Click Login button
   await page.click('#login-button');
 
