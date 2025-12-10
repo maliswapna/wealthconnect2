@@ -15,7 +15,8 @@ test('Login Test - Saucedemo', async ({ page }) => {
   // 4. Click Login
   await page.click('#login-button');
 
-  // 5. Wait for inventory page
+ 
+  //6 wait and verify successful login
   await expect(page.locator('.inventory_list')).toBeVisible();
 
   // 6. Verify URL
