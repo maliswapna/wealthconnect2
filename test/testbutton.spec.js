@@ -1,23 +1,23 @@
-// test/testlogin.spec.js
+// login.spec.js
 const { test, expect } = require('@playwright/test');
 
-test('Login Test - Sample', async ({ page }) => {
-  // Go to the login page
+test('Login Test - Saucedemo', async ({ page }) => {
+
+  // 1. Open URL
   await page.goto('https://www.saucedemo.com/');
 
-  // Fill username
+  // 2. Enter username
   await page.fill('#user-name', 'standard_user');
 
-  // Fill password
+  // 3. Enter password
   await page.fill('#password', 'secret_sauce');
 
-  // Click Login button
+  // 4. Click Login
   await page.click('#login-button');
 
-  // Wait for inventory page after login
+  // 5. Wait for inventory page
   await expect(page.locator('.inventory_list')).toBeVisible();
 
-  // Validate page URL contains 'inventory'
-  // story 768
+  // 6. Verify URL
   await expect(page).toHaveURL(/inventory/);
 });
